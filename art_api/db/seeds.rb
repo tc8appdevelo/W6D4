@@ -10,17 +10,14 @@ ActiveRecord::Base.transaction do
     User.delete_all
   
     User.create(
-      name: 'Derrick Rose',
-      email: "basketball.com"
+      username: 'Derrick Rose'
     )
   
     User.create(
-      name: "Tom Brady",
-      email: "football.com"
+      username: "Tom Brady"
     )
   
     User.create(
-      name: "Luka Doncic",
-      email: 'mavericks.com'
+      username: "Luka Doncic"
     )
 end

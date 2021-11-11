@@ -8,16 +8,48 @@
 
 ActiveRecord::Base.transaction do
     User.delete_all
-  
-    User.create(
-      username: 'Derrick Rose'
+
+
+    user1 = User.create(
+      username: "claude_monet"
     )
-  
-    User.create(
-      username: "Tom Brady"
+
+    user2 = User.create(
+      username: "vincent_van_gogh"
     )
-  
-    User.create(
-      username: "Luka Doncic"
+
+    user3 = User.create(
+      username: "rembrandt"
     )
+
+    art1 = Artwork.create(
+      title: "The Starry Night",
+      artist_id: 2,
+      image_url: "googlethisart.com"
+    )
+
+    art2 = Artwork.create(
+      title: "monalisa_stolen",
+      artist_id: 1,
+      image_url: "anotherone.com"
+    )
+
+    art3 = Artwork.create(
+      title: "statue_of_temple",
+      artist_id: 3,
+      image_url: "stat.com"
+    )
+    ArtworkShare.create(
+      artwork_id: art1.id,
+      viewer_id: user3.id
+    )    
+    ArtworkShare.create(
+      artwork_id: art2.id,
+      viewer_id: user2.id
+    )
+    ArtworkShare.create(
+      artwork_id: art3.id,
+      viewer_id: user1.id
+    )
+
 end

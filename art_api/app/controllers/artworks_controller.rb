@@ -1,8 +1,9 @@
 class ArtworksController < ApplicationController
     def index
-        #render plain: "I'm in the index action!"
-        @artworks = Artwork.all
-        render json: @artworks
+        render json: Artwork.all
+        # @artwork = Artwork.where(artist_id: params[:artist_id])
+        # render json: @artwork
+
     end
 
     def show

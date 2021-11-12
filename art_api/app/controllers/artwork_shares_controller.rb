@@ -1,4 +1,5 @@
 class ArtworkSharesController < ApplicationController
+
     def create
         artwork_share = ArtworkShare.new(artwork_share_params)
         # replace the `artwork_share_attributes_here` with the actual attribute keys
